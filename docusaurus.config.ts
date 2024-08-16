@@ -93,7 +93,7 @@ const config: Config = {
           items: [
             {
               label: 'Playground',
-              to: '/docs/intro',
+              to: '/playground/',
             },
             {
               href: 'https://github.com/pbp-fasilkom-ui/ganjil-2025/',
