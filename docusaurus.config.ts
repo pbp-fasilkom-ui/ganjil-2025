@@ -46,6 +46,7 @@ const config: Config = {
           // editUrl:
           //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
