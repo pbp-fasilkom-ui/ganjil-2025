@@ -109,6 +109,17 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: [
+    [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'assignments',
+          path: 'assignments',
+          routeBasePath: 'assignments',
+          sidebarPath: require.resolve('./sidebars.js')
+        },
+      ],
+  ],
 };
 
 export default config;
