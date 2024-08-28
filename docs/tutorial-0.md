@@ -165,7 +165,11 @@ git credential-manager configure
 git config --global credential.credentialStore keychain
 ```
 
-Apabila perintah `git credential-manager` tidak bisa dijalankan, kamu bisa coba perintah `git-credential-manager` atau `git-credential-manager-core`.
+:::tip
+- Apabila perintah `git credential-manager` tidak bisa dijalankan, kamu bisa coba perintah `git-credential-manager` atau `git-credential-manager-core`.
+- Pada macOS, jika kedua perintah tersebut tidak berhasil, kamu bisa mencoba mengunduh git credential manager menggunakan *Homebrew* dengan perintah `brew install git-credential-manager-core`.
+- Jika macOS tidak memiliki *Homebrew*, kamu bisa mengunduhnya dengan mengikuti instruksi dari [web ini](https://brew.sh).
+:::
 
 ### Langkah 5: Verifikasi Konfigurasi
 

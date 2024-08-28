@@ -165,7 +165,11 @@ git credential-manager configure
 git config --global credential.credentialStore keychain
 ```
 
-If the `git credential-manager` command doesn't work, you can try `git-credential-manager` or `git-credential-manager-core` instead.
+:::tip
+- If the `git credential-manager` command doesn't work, you can try `git-credential-manager` or `git-credential-manager-core` instead.
+- on macOS, if both of those commands still don't work, you can try installing the git credential manager using *Homebrew* with the command `brew install git-credential-manager-core`
+- If your mac doesn't have Homebrew installed, you can install it by following the instructions on the [Homebrew website](https://brew.sh/).
+:::
 
 ### Step 5: Verifying Configuration
 
