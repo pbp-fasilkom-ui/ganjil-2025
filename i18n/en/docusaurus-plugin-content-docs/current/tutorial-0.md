@@ -680,7 +680,7 @@ The full documentation of the PWS can be accessed [here](https://docs.pbp.cs.ui.
 9. On the PWS site's side bar, click on the project that you have created. You can see the current deployment status of your project. If the status is `Building`, it means that your project is still in the deployment process. If the status is `Running`, then your project is ready to be accessed at the deployment URL. You can press the `View Project` button that is located on your project page.
 
 	:::info
-	Currently, the PWS deployment URL is not yet accessible using the HTTPS protocol. If there is a problem with the deployment, try checking your deployment URL. If your URL starts with `https://`, try changing it to `http://`. Your deployed application should now be accessible.
+	Currently, the PWS deployment URL is not yet accessible using the HTTPS protocol. If there is a problem with the deployment, try checking your deployment URL. If your URL starts with `https://`, try changing it to `http://`. Your deployed application should now be accessible. If it isn't, try accessing your deployment on incognito mode.
 	:::
 
 10. If there are any changes made to the Django project that you want to push to PWS, you only need to run

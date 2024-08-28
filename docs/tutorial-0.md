@@ -685,7 +685,7 @@ Dokumentasi PWS secara lengkap dapat diakses [di sini](https://docs.pbp.cs.ui.ac
 9. Pada _side bar_ situs PWS, klik proyek yang telah kamu buat. Kamu dapat melihat status _deployment_ kamu saat ini. Apabila statusnya `Building`, artinya proyek kamu masih dalam proses _deployment_. Apabila statusnya `Running`, maka proyek kamu sudah bisa diakses pada URL _deployment_. Kamu bisa menekan tombol `View Project` yang terdapat pada halaman proyek kamu.
 
 	:::info
-	Untuk saat ini, URL deployment PWS belum bisa diakses menggunakan protokol HTTPS. Apabila deployment kamu bermasalah, coba periksa URL yang kamu akses. Apabila URL dimulai dengan https://, ganti menjadi http://. Seharusnya, setelah itu deployment kamu bisa diakses.
+	Untuk saat ini, URL deployment PWS belum bisa diakses menggunakan protokol HTTPS. Apabila deployment kamu bermasalah, coba periksa URL yang kamu akses. Apabila URL dimulai dengan https://, ganti menjadi http://. Seharusnya, setelah itu deployment kamu bisa diakses. Apabila masih tidak bisa, coba buka situs deployment kamu pada _incognito mode_.
 	:::
 
 10. Apabila kedepannya ada perubahan pada proyek Django kamu yang ingin kamu _push_ ke PWS, kamu hanya perlu menjalankan perintah:
