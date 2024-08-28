@@ -165,6 +165,8 @@ git credential-manager configure
 git config --global credential.credentialStore keychain
 ```
 
+Apabila perintah `git credential-manager` tidak bisa dijalankan, kamu bisa coba perintah `git-credential-manager` atau `git-credential-manager-core`.
+
 ### Langkah 5: Verifikasi Konfigurasi
 
 Untuk memastikan konfigurasi telah diatur dengan benar pada repositori lokal, kamu dapat menjalankan perintah berikut.
@@ -697,6 +699,18 @@ Dokumentasi PWS secara lengkap dapat diakses [di sini](https://docs.pbp.cs.ui.ac
 	:::note
 	Pada tutorial berikutnya, akan ada tutorial untuk mengkonfigurasi supaya _push_ perubahan kode kamu ke PWS dapat dilakukan secara otomatis sekaligus dengan _push_ ke GitHub.
 	:::
+
+### Tambahan: PWS Troubleshooting
+
+Apabila ada kendala-kendala seperti build yang gagal, "Build Not Found", dan lain sebagainya, terdapat beberapa solusi yang dapat kamu coba.
+
+- Coba untuk kembali perhatikan struktur _file_ proyek Djangomu. Terkadang pesan "Build Not Found" atau sebagainya menandakan bahwa _file_-_file_ pada proyek Djangomu kurang lengkap, sehingga proyek Djangomu tidak terdeteksi oleh PWS.
+- Apabila kamu sudah yakin bahwa struktur _file_ proyek Djangomu sudah lengkap tetapi _deployment_ masih tidak berhasil, coba untuk tambahkan file bernama `Procfile` (tanpa ekstensi _file_) dengan isi sebagai berikut:
+
+```Procfile
+release: python3 manage.py migrate --noinput
+web: gunicorn mental_health_tracker.wsgi
+```
 
 ## Akhir Kata
 
