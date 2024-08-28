@@ -153,11 +153,17 @@ Perlu diketahui bahwa _flag_ `--global` akan mengubah konfigurasi global untuk s
 
 Untuk nantinya menghubungkan akun Git kamu dengan akun GitHub, terdapat konfigurasi ekstra yang perlu kamu tambahkan. Kamu hanya perlu menjalankan kedua perintah dibawah ini:
 
+**Windows**
+```bash
+git credential-manager configure
+git config --global credential.credentialStore wincredman
+```
+
+**Unix (macOS, Linux)**
 ```bash
 git credential-manager configure
 git config --global credential.credentialStore keychain
 ```
-baik untuk Windows, MacOS, ataupun Linux.
 
 ### Langkah 5: Verifikasi Konfigurasi
 

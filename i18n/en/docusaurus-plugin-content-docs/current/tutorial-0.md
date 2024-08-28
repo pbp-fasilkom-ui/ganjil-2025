@@ -153,11 +153,17 @@ It is important to note that the `--global` flag will change the global configur
 
 To connect your Git account with your GitHub account, there is an extra configuration that you need to add. You only need to run the two commands below:
 
+**Windows**
+```bash
+git credential-manager configure
+git config --global credential.credentialStore wincredman
+```
+
+**Unix (macOS, Linux)**
 ```bash
 git credential-manager configure
 git config --global credential.credentialStore keychain
 ```
-on your terminal, whether it's in Windows, MacOS, or Linux.
 
 ### Step 5: Verifying Configuration
 
@@ -166,7 +172,6 @@ To ensure that the configuration has been set correctly on the local repository,
 ```bash
 git config --list
 ```
-
 ## Tutorial: Basic Git Usage
 
 **Repository** is a place for storing software projects, which includes all revisions and changes made to the code. To execute Git commands, you can do so on the repository on GitHub, a collaborative platform for managing projects using Git.
