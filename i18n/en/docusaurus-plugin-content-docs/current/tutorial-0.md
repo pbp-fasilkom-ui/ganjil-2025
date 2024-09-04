@@ -8,6 +8,8 @@ Path: docs/tutorial-0
 
 Platform-Based Programming (CSGE602022) — Organized by the Faculty of Computer Science Universitas Indonesia, Odd Semester 2024/2025
 
+_Last updated: September 4th 2024, 10.00 WIB_
+
 ## Learning Objectives
 
 After completing this tutorial, students are expected to be able to:
@@ -153,22 +155,23 @@ It is important to note that the `--global` flag will change the global configur
 
 To connect your Git account with your GitHub account, there is an extra configuration that you need to add. You only need to run the two commands below:
 
+
 **Windows**
-```bash
+```powershell
 git credential-manager configure
 git config --global credential.credentialStore wincredman
 ```
 
-**Unix (macOS, Linux)**
+**Unix (macOS/Linux)**
 ```bash
 git credential-manager configure
 git config --global credential.credentialStore keychain
 ```
 
 :::tip
-- If the `git credential-manager` command doesn't work, you can try `git-credential-manager` or `git-credential-manager-core` instead.
-- on macOS, if both of those commands still don't work, you can try installing the git credential manager using *Homebrew* with the command `brew install git-credential-manager-core`
-- If your mac doesn't have Homebrew installed, you can install it by following the instructions on the [Homebrew website](https://brew.sh/).
+- If the `git credential-manager` command does not work, you can try `git-credential-manager` or `git-credential-manager-core` instead.
+- On macOS, if both commands does not work, you can try to install the Git Credential Manager using Homebrew with the command `brew install git-credential-manager-core`.
+- If your macOS does not have Homebrew, you can install it following the instructions [here](https://brew.sh).
 :::
 
 ### Step 5: Verifying Configuration
@@ -178,9 +181,14 @@ To ensure that the configuration has been set correctly on the local repository,
 ```bash
 git config --list
 ```
+
 ## Tutorial: Basic Git Usage
 
 **Repository** is a place for storing software projects, which includes all revisions and changes made to the code. To execute Git commands, you can do so on the repository on GitHub, a collaborative platform for managing projects using Git.
+
+:::note
+This basic Git usage tutorial will not be required to be submitted and only used for the purpose of learning. The repository link that you will submit is only the Django project that you will make after this Basic Git Usage tutorial.
+:::
 
 ### Step 1: Initiatilzing a Repository on GitHub
 
@@ -304,7 +312,7 @@ As mentioned earlier (Step 2), **push** is the process of sending changes that y
 	- Do a refresh on the page you are on, you should see the `README.md` file on your GitHub repository has been changed.
 
 :::tip
-If you want to take **all** the changes that have not been staged (marked for entry into the commit) **from the entire project directory**, run `git add .`.
+If you want to tak **all** the changes that have not been staged (marked for entry into the commit) **from the entire project directory**, run `git add .`.
 :::
 
 ### Step 5: Pulling Changes from a Repository
@@ -375,14 +383,26 @@ In this step, you will learn about the use of branches in Git. Using branches al
 
 **Django** is a popular framework for web application development with the Python programming language. In this tutorial, you will learn the steps to install Django and initialize a demo project as a starter.
 
+:::warning
+This Django project should be initialized on a different directory than your `my-first-repo` directory that you create in the previous steps. Make sure you have moved to a different directory and you are not in `my-first-repo` anymore.
+:::
+
 ### Step 1: Creating a Directory and Enabling the Virtual Environment
 
 1. Create a new directory with the name `mental-health-tracker` and enter it.
 2. Inside the directory, open the command prompt (Windows) or terminal shell (Unix).
 3. Create a virtual environment by running the following command.
 
+	Windows:
+
 	```bash
 	python -m venv env
+	```
+
+	Unix (macOS/Linux):
+
+	```bash
+	python3 -m venv env
 	```
 
 4. The **virtual environment** is useful for isolating the package and dependencies from the application to avoid conflicts with other versions of the same on your computer. You can activate the virtual environment with the following command.
@@ -398,6 +418,13 @@ In this step, you will learn about the use of branches in Git. Using branches al
 		```bash
 		source env/bin/activate
 		```
+
+	:::tip
+	For Windows users, if you encounter an error along the lines of `PSSecurityException`, `UnauthorizedAccess`, or `running scripts is disabled on this system`, you can follow these steps
+		1. Open the PowerShell as an administrator
+		2. Run the following command `Set-ExecutionPolicy Unrestricted -Force`
+		3. Try activating the virtual environment again
+	:::
 
 5. The virtual environment will be activated, indicated with `(env)` on the terminal input line.
 
@@ -478,7 +505,7 @@ In this step, you will learn about the use of branches in Git. Using branches al
 2. Initiate the local directory `mental-health-tracker` as a Git repository.
 
 	:::tip
-	_Hint: Remember the previous tutorial step_
+	Try to remember the steps from the previous tutorial. Make sure to run the `git init` command in the `mental-health-tracker` directory, not outside or in other directories inside `mental-health-tracker`.
 	:::
 
 3. Add a `.gitignore` file
@@ -510,6 +537,7 @@ In this step, you will learn about the use of branches in Git. Using branches al
 
 		# Generated files
 		.idea/**/contentModel.xml
+		.DS_Store
 
 		# Sensitive or high-churn files
 		.idea/**/dataSources/
@@ -677,19 +705,24 @@ The full documentation of the PWS can be accessed [here](https://docs.pbp.cs.ui.
 	```
 	This step needs to be done so that the Django project can be accessed through the PWS deployment URL. Do a `git add`, `commit`, and `push` change to the GitHub repository you have created.
 
-8. Run the information in the Project Command on the PWS page. After that, run the following command to change the branch name to `main`.
+	:::warning
+	Before proceeding to the next step, make sure that your repository has the same structure as this [example repository](https://github.com/MightyZanark/mental-health-tracker).
+
+8. Run the information in the Project Command on the PWS page. When you push to the PWS server, there will be a window pop-up that will ask for your `username` and `password`. Use the credentials provided by PWS and **not your SSO credentials**.
+
+9. After that, run the following command to change the branch name to `main`.
 
 	```bash
 	git branch -M main
 	```
 
-9. On the PWS site's side bar, click on the project that you have created. You can see the current deployment status of your project. If the status is `Building`, it means that your project is still in the deployment process. If the status is `Running`, then your project is ready to be accessed at the deployment URL. You can press the `View Project` button that is located on your project page.
+10. On the PWS site's side bar, click on the project that you have created. You can see the current deployment status of your project. If the status is `Building`, it means that your project is still in the deployment process. If the status is `Running`, then your project is ready to be accessed at the deployment URL. You can press the `View Project` button that is located on your project page.
 
 	:::info
-	Currently, the PWS deployment URL is not yet accessible using the HTTPS protocol. If there is a problem with the deployment, try checking your deployment URL. If your URL starts with `https://`, try changing it to `http://`. Your deployed application should now be accessible. If it isn't, try accessing your deployment on incognito mode.
+	Currently, the PWS deployment URL is not yet accessible using the HTTPS protocol. If there is a problem with the deployment, try checking your deployment URL. If your URL starts with `https://`, try changing it to `http://`. Your deployed application should now be accessible. If the URL is still not accessible, try opening it on incognito mode.
 	:::
 
-10. If there are any changes made to the Django project that you want to push to PWS, you only need to run
+11. If there are any changes made to the Django project that you want to push to PWS, you only need to run
 	```
 	git push pws main:master
 	```
@@ -699,18 +732,41 @@ The full documentation of the PWS can be accessed [here](https://docs.pbp.cs.ui.
 	On the next tutorial, you will learn how to configure so that the push of the code changes you make to PWS can be done automatically together with the push to GitHub.
 	:::
 
-### Extras: PWS Troubleshooting
+## Extras: PWS Troubleshooting
 
-If you encounter issues such as a failed build, "Build Not Found," or other similar problems, there are a few solutions you can try:
+### Build Failure (No build plan could be generated)
+If you encounter this issue, there are some steps that you can try to fix it.
 
-- Take another look at the structure of your Django project. Sometimes the "Build Not Found" message or similar issues indicate that the files in your Django project are incomplete, causing your project not to be detected by PWS.
-- If you are confident that your Django project's file structure is complete but the deployment still fails, try adding a file named Procfile (without a file extension) with the following content:
+- Check if your project structure is correct. The "No build plan could be generated" error usually means that the files in your project are not complete so that your project is not recognized by PWS. There are some things that you can check:
+	- Repository content: Make sure that your repository has the same contents as the example repository given on step 8 of the PWS deployment tutorial.
+	- `requirements.txt` file: Make sure that the name is exactly the same, not `requirement.txt` (missing 's') or `requirements.txt.txt` (duplicate extension).
+	- `.gitignore` file: Make sure that the filename start with a dot (.) and does not have any extensions at the end. Also make sure that the file is on the root directory along with your `manage.py` file, `env` directory, `mental_health_tracker` directory, `requirements.txt` file, the hidden `.git` directory, and the `db.sqlite3` database file.
+	:::tip
+	If you are using Windows, tick the `File name extensions` checkbox on Windows Explorer to see the file extensions of your file. With this enabled, you can troubleshoot more easily.
+	![How to tick the File name extensions checkbox on Windows Explorer](/img/0-file-name-extensions.png)
+	:::
+	- Make sure that your `env` directory and `db.sqlite3` database file are not tracked by Git. If they are, you can add a `.gitignore` file, then run the command `git rm --cached -r env db.sqlite3` before doing `add`, `commit`, and `push`. This is necessary to so that the `env` directory and `db.sqlite3` file is not tracked by Git.
+	- If you are sure that your repository structure is correct but you still encounter the error, make sure that you are pushing to PWS using the `master` branch. To temporarily change your branch to `master`, run the command `git branch -M master`. After pushing to PWS, you can change it back to `main` using the command `git branch -M main`.
+	- If the steps above do not work, try adding a `Procfile` file (without any extension) to the root directory of your repository with the following content:
 
-```Procfile
-Procfile
-release: python3 manage.py migrate --noinput
-web: gunicorn mental_health_tracker.wsgi
-```
+		```Procfile
+		release: python3 manage.py migrate --noinput
+		web: gunicorn mental_health_tracker.wsgi
+		```
+
+### Not Saving the Credentials
+
+If you forgot to save the credentials that you receive when creating a new project on the PWS page, you can create a new project and save the credentials again. You can name the new project `mentalhealthtracker` or anything else but this time **do not forget to save your credentials**.
+
+### Changing the PWS Remote URL on Your Local Repository
+
+If you created a new project on the PWS page to resolve the previous issue, you need to change the remote URL of your local repository to the new PWS deployment URL. If you don't change the remote URL, then your changes will be pushed to the old project.
+
+To change the remote URL, you just need to change the first command displayed on the PWS new project page. Change `git remote add pws <link` to `git remote set-url pws <link>`, then run the other commands as usual.
+
+
+:::tip
+- Make sure to replace `<Your PWS deployment URL>` with the PWS deployment URL that you have received from the PWS page.
 
 ## Closing
 

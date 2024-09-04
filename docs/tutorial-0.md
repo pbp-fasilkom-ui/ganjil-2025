@@ -8,6 +8,10 @@ Path: docs/tutorial-0
 
 Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2024/2025
 
+_Terakhir diperbarui: 4 September 2024, pukul 10.00 WIB_
+
+---
+
 ## Tujuan Pembelajaran
 
 Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
@@ -148,7 +152,7 @@ Perlu diketahui bahwa _flag_ `--global` akan mengubah konfigurasi global untuk s
 :::note
 - Pastikan untuk mengganti `<NAME>` dan `<EMAIL>` dengan informasi pribadimu
 :::
-
+  
 ### Langkah 4: Konfigurasi Autentikasi
 
 Untuk nantinya menghubungkan akun Git kamu dengan akun GitHub, terdapat konfigurasi ekstra yang perlu kamu tambahkan. Kamu hanya perlu menjalankan kedua perintah dibawah ini:
@@ -182,6 +186,10 @@ git config --list
 ## Tutorial: Penggunaan Dasar Git
 
 **Repositori** adalah tempat penyimpanan untuk proyek perangkat lunak, yang mencakup semua revisi dan perubahan yang telah dilakukan pada kode. Untuk mengeksekusi perintah-perintah Git, kamu dapat melakukannya pada repositori di GitHub, platform kolaboratif untuk mengelola proyek menggunakan Git.
+
+:::note
+Perlu kamu ketahui bahwa tutorial penggunaan dasar Git ini tidak akan dikumpulkan dan hanya bersifat latihan. Berkas yang akan kamu kumpulkan hanyalah proyek Django yang langkah pembuatannya juga terdapat di tutorial ini.
+:::
 
 ### Langkah 1: Melakukan Inisiasi Repositori di GitHub
 
@@ -380,19 +388,30 @@ Pada tahap ini kamu akan mempelajari tentang penggunaan _branch_ dalam Git. Peng
 
 **Django** adalah kerangka kerja (_framework_) yang populer untuk pengembangan aplikasi web dengan bahasa pemrograman Python. Dalam tutorial ini, kamu akan mempelajari langkah-langkah instalasi Django dan inisiasi proyek demo sebagai _starter_.
 
+:::warning
+Proyek Django ini harus kamu inisiasikan pada direktori yang berbeda dengan `my-first-repo` yang diajarkan pada langkah-langkah sebelumnya. Pastikan kamu sudah berpindah direktori pada terminal dan sudah tidak berada di dalam `my-first-repo`.
+:::
+
 ### Langkah 1: Membuat Direktori dan Mengaktifkan _Virtual Environment_
 
 1. Buat direktori baru dengan nama `mental-health-tracker` dan masuk ke dalamnya.
 2. Di dalam direktori tersebut, buka _command prompt_ (Windows) atau _terminal shell_ (Unix).
 3. Buat _virtual environment_ dengan menjalankan perintah berikut.
 
+	Windows:
+
 	```bash
 	python -m venv env
 	```
 
+	Unix (macOS, Linux):
+	```bash
+	python3 -m venv env
+	```
+
 4. **_Virtual environment_** ini berguna untuk mengisolasi _package_ serta _dependencies_ dari aplikasi agar tidak bertabrakan dengan versi lain yang ada pada komputermu. Kamu dapat mengaktifkan _virtual environment_ dengan perintah berikut.
 
-	- Windows:
+	- Windows :
 
 		```bash
 		env\Scripts\activate
@@ -403,6 +422,13 @@ Pada tahap ini kamu akan mempelajari tentang penggunaan _branch_ dalam Git. Peng
 		```bash
 		source env/bin/activate
 		```
+	
+	:::tip
+	Bagi pengguna Windows, apabila kamu mengalami masalah dengan kata-kata `PSSecurityException`, `UnauthorizedAccess`, _running scripts is disabled on this system_,lakukan langkah berikut.
+	1. Buka PowerShell dengan akses _administrator_.
+	2. Jalankan perintah `Set-ExecutionPolicy Unrestricted -Force`.
+	3. Silakan coba lagi aktifkan _virtual environment_ di terminal kamu.
+	:::
 
 5. _Virtual environment_ akan aktif dan ditandai dengan `(env)` di baris _input_ terminal.
 
@@ -483,7 +509,7 @@ Pada tahap ini kamu akan mempelajari tentang penggunaan _branch_ dalam Git. Peng
 2. Inisiasi direktori lokal `mental-health-tracker` sebagai repositori Git.
 
 	:::tip
-	_Hint: Ingat kembali tahap tutorial sebelumnya_
+	Ingat kembali tahap tutorial sebelumnya. Pastikan pula bahwa kamu menjalankan perintah `git init` pada direktori `mental-health-tracker`, bukan diluarnya ataupun di direktori lain di dalam `mental-health-tracker`.
 	:::
 
 3. Tambahkan Berkas `.gitignore`
@@ -515,6 +541,7 @@ Pada tahap ini kamu akan mempelajari tentang penggunaan _branch_ dalam Git. Peng
 
 		# Generated files
 		.idea/**/contentModel.xml
+		.DS_Store
 
 		# Sensitive or high-churn files
 		.idea/**/dataSources/
@@ -682,19 +709,25 @@ Dokumentasi PWS secara lengkap dapat diakses [di sini](https://docs.pbp.cs.ui.ac
 	```
 	Langkah ini perlu kamu lakukan agar proyek Django kamu dapat diakses melalui URL _deployment_ PWS. Lakukan `git add`, `commit`, dan `push` perubahan ini ke repositori GitHub kamu.
 
-8. Jalankan perintah yang terdapat pada informasi _Project Command_ pada halaman PWS. Setelah itu, jalankan perintah ini untuk kembali mengubah nama _branch_ utama kamu menjadi `main`.
+	:::warning
+	Sebelum kamu ke langkah selanjutnya, pastikan struktur repositorimu sama seperti [contoh repositori ini](https://github.com/MightyZanark/mental-health-tracker).
+	:::
+
+8. Jalankan perintah yang terdapat pada informasi _Project Command_ pada halaman PWS. Ketika kamu melakukan push ke PWS, akan ada _window_ yang meminta `username` dan `password`. Gunakan _credentials_ yang kamu terima dari PWS, **bukan _credentials_ SSO**.
+
+9. Setelah menjalankan perintah sebelumnya, jalankan perintah ini untuk kembali mengubah nama _branch_ utama kamu menjadi `main`.
 
 	```bash
 	git branch -M main
 	```
 
-9. Pada _side bar_ situs PWS, klik proyek yang telah kamu buat. Kamu dapat melihat status _deployment_ kamu saat ini. Apabila statusnya `Building`, artinya proyek kamu masih dalam proses _deployment_. Apabila statusnya `Running`, maka proyek kamu sudah bisa diakses pada URL _deployment_. Kamu bisa menekan tombol `View Project` yang terdapat pada halaman proyek kamu.
+10. Pada _side bar_ situs PWS, klik proyek yang telah kamu buat. Kamu dapat melihat status _deployment_ kamu saat ini. Apabila statusnya `Building`, artinya proyek kamu masih dalam proses _deployment_. Apabila statusnya `Running`, maka proyek kamu sudah bisa diakses pada URL _deployment_. Kamu bisa menekan tombol `View Project` yang terdapat pada halaman proyek kamu.
 
 	:::info
 	Untuk saat ini, URL deployment PWS belum bisa diakses menggunakan protokol HTTPS. Apabila deployment kamu bermasalah, coba periksa URL yang kamu akses. Apabila URL dimulai dengan https://, ganti menjadi http://. Seharusnya, setelah itu deployment kamu bisa diakses. Apabila masih tidak bisa, coba buka situs deployment kamu pada _incognito mode_.
 	:::
 
-10. Apabila kedepannya ada perubahan pada proyek Django kamu yang ingin kamu _push_ ke PWS, kamu hanya perlu menjalankan perintah:
+11. Apabila kedepannya ada perubahan pada proyek Django kamu yang ingin kamu _push_ ke PWS, kamu hanya perlu menjalankan perintah:
 	```bash
 	git push pws main:master
 	```
@@ -704,17 +737,39 @@ Dokumentasi PWS secara lengkap dapat diakses [di sini](https://docs.pbp.cs.ui.ac
 	Pada tutorial berikutnya, akan ada tutorial untuk mengkonfigurasi supaya _push_ perubahan kode kamu ke PWS dapat dilakukan secara otomatis sekaligus dengan _push_ ke GitHub.
 	:::
 
-### Tambahan: PWS Troubleshooting
+## Tambahan: _Troubleshooting_ PWS
 
-Apabila ada kendala-kendala seperti build yang gagal, "Build Not Found", dan lain sebagainya, terdapat beberapa solusi yang dapat kamu coba.
+### Build Gagal (_No build plan could be generated_)
+Apabila ada kendala seperti build yang gagal, terdapat beberapa solusi yang dapat kamu coba.
 
-- Coba untuk kembali perhatikan struktur _file_ proyek Djangomu. Terkadang pesan "Build Not Found" atau sebagainya menandakan bahwa _file_-_file_ pada proyek Djangomu kurang lengkap, sehingga proyek Djangomu tidak terdeteksi oleh PWS.
-- Apabila kamu sudah yakin bahwa struktur _file_ proyek Djangomu sudah lengkap tetapi _deployment_ masih tidak berhasil, coba untuk tambahkan file bernama `Procfile` (tanpa ekstensi _file_) dengan isi sebagai berikut:
+- Coba untuk kembali perhatikan struktur _file_ proyek Djangomu. Terkadang pesan "No build plan could be generated" atau sebagainya menandakan bahwa _file_-_file_ pada proyek Djangomu kurang lengkap, sehingga proyek Djangomu tidak terdeteksi oleh PWS. Terdapat beberapa hal yang dapat kamu coba periksa:
+	- Isi Repositori: Pastikan struktur repositorimu sudah sama dengan contoh repositori yang dilampirkan pada langkah 7 di bagian tutorial _deployment_ ke PWS.
+	- Berkas `requirements.txt`: Pastikan nama berkas tersebut sama persis, bukan `requirement.txt` (kurang huruf 's') atau `requirements.txt.txt` (double extension)
+	- Berkas `.gitignore`: Pastikan bahwa berkas `.gitignore` diawali dengan titik dan tidak memwliki ekstensi apa-apa di akhir. Pastikan pula bahwa berkas `.gitignore` terletak di _root folder_ bersama dengan berkas `manage.py`, direktori `env`, direktori `mental_health_tracker`, berkas `requirements.txt`, direktori tersembunyi `.git`, dan berkas basis data `db.sqlite3`.
+	:::tip
+	Apabila kamu pengguna Windows, centang opsi `File name extensions` pada Windows Explorer untuk melihat ekstensi berkas-berkas yang kamu miliki. Dengan ini, kamu bisa melakukan _troubleshooting_ dengan lebih mudah.
+	![Cara mencentang opsi melihat ekstensi berkas](/img/0-file-name-extensions.png)
+	:::
+	- Pastikan bahwa direktori `env` dan berkas basis data `db.sqlite3` tidak ikut dilacak/tidak ikut di-_push_ oleh Git. Apabila sudah telanjur terjadi, kamu bisa menambahkan berkas `.gitignore`, kemudian menjalankan perintah `git rm --cached -r env db.sqlite3` sebelum melakukan `add`, `commit`, dan `push`. Hal ini perlu dilakukan agar direktori `env` dan berkas `db.sqlite3` selanjutnya tidak ikut dilacak oleh Git.
+- Apabila kamu sudah yakin bahwa struktur _file_ proyek Djangomu sudah lengkap tetapi _deployment_ masih gagal, pastikan bahwa kamu melakukan _push_ ke PWS menggunakan branch `master`. Untuk sementara mengubah branch utamamu menjadi `master`, jalankan perintah `git branch -M master`. Setelah melakukan _push_ ke PWS, kamu bisa kembali mengubah branch kamu menjadi `main` dengan menjalankan peringah `git branch -M main`.
+- Apabila kamu sudah mencoba langkah-langkah di atas tetapi _deployment_ masih tidak berhasil, coba untuk tambahkan file bernama `Procfile` (tanpa ekstensi _file_) dengan isi sebagai berikut:
 
 ```Procfile
 release: python3 manage.py migrate --noinput
 web: gunicorn mental_health_tracker.wsgi
 ```
+
+### Tidak Menyimpan _Credentials_
+
+Apabila kamu lupa untuk menyimpan _credentials_ yang kamu dapatkan saat membuat proyek di PWS, yang bisa kamu lakukan adalah membuat proyek baru pada PWS. Kamu dapat menamakan proyek ini `mentalhealthtracker2` dan sebagainya. Kali ini, **jangan lupa untuk simpan _credentials_ yang kamu dapatkan**.
+
+Setelah kamu membuat proyek baru, perintah-perintah yang kamu perlu jalankan juga sedikit berbeda. Hal ini akan dibahas pada poin selanjutnya.
+
+### Mengganti _Remote_ URL PWS pada Repositori Lokal
+
+Jika kamu membuat proyek baru di PWS untuk mengatasi masalah pada proyek sebelumnya, kamu perlu mengganti _remote_ URL di repositori lokalmu menjadi _remote_ URL dari proyek yang baru. Apabila tidak kamu ganti, maka perintah `git push pws master` yang nantinya akan kamu jalankan tidak akan melakukan push ke proyek barumu, melainkan akan tetap mencoba melakukan push ke proyekmu yang lama.
+
+Untuk melakukan penggantian _remote_ URL, kamu hanya perlu mengganti perintah pertama yang terdapat pada tampilan proyek baru PWS. Ganti perintah `git remote add pws <link>` menjadi `git remote set-url pws <link>`, lalu jalankan perintah-perintah selanjutnya seperti biasa.
 
 ## Akhir Kata
 
