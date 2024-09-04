@@ -76,7 +76,7 @@ In the realms of web development, there are some concepts and architectures that
 
 ### What is MVT?
 
-![MVT Diagram](https://cdn.discordapp.com/attachments/1142468662461214771/1146996248268775484/3._Python_Django_-_Modul_2_Page2_Image5.jpg)
+![MVT Diagram](https://miro.medium.com/v2/resize:fit:1400/1*m2_0pEyl1cfnfWYgCSlAZA.png)
 
 **MVT** stands for **Model-View-Template**. MVT is an architecture that is used on web development to separate the main components of an application. This concept allows developers to organize and manage code in a structured way.
 
