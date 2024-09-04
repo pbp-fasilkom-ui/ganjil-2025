@@ -4,7 +4,7 @@ sidebar_position: 1
 Path: docs/tugas-2
 ---
 
-# Tugas 2: Implementasi *Model-View-Template* (MVT) pada Django
+# Assignment 2: Model-View-Template (MVT) Implementation on Django
 
 Platform-Based Programming (CSGE602022) — Organized by the Faculty of Computer Science Universitas Indonesia, Odd Semester 2024/2025
 
