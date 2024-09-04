@@ -468,7 +468,7 @@ With the above steps, you have successfully implemented a basic view in the `mai
     from django.utils import timezone
     from .models import MoodEntry
 
-    class mainTest(TestCase):
+    class MainTest(TestCase):
         def test_main_url_is_exist(self):
             response = Client().get('')
             self.assertEqual(response.status_code, 200)
@@ -497,7 +497,7 @@ With the above steps, you have successfully implemented a basic view in the `mai
     - `test_main_url_is_exist` is a test to check whether the main URL path (`''`) is accessible.
     - `test_main_using_main_template` is a test to verify if the main page is rendered using the `main.html` template.
     - `test_nonexistent_page` is a test to verify that a page that doesn't exist in your Django project really doesn't exist and will return 404 response code (Not Found)
-    - 'test_strong_mood_user` is a test to verify the code logic, especially when deciding whether the user's mood can be considered strong with some `mood_intensity` value stored.
+    - `test_strong_mood_user` is a test to verify the code logic, especially when deciding whether the user's mood can be considered strong with some `mood_intensity` value stored.
 
 When performing unit testing, make sure to always check all possible cases. For example, when testing the `is_mood_strong` property, there should be two cases that result in the function output being either `True` or `False`.
 
