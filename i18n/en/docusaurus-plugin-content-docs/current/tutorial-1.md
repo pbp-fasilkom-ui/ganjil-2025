@@ -177,7 +177,6 @@ Before starting, you need to remember that the root directory is the **outer** d
         ```
 :::
 
-### Langkah 2: Membuat Aplikasi `main` dalam Proyek *mental-health-tracker*
 ### Step 2: Creating the `main` Application Inside the `mental-health-tracker` Project
 
 You will create a new application called `main` inside the `mental-health-tracker` project.
