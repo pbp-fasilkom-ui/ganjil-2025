@@ -1,5 +1,5 @@
 ---
-sidebar_label: Tugas 2
+sidebar_label: Assignment 2
 sidebar_position: 1
 Path: docs/tugas-2
 ---
