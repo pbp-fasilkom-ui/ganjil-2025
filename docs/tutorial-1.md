@@ -489,7 +489,6 @@ Dengan langkah-langkah di atas, kamu telah berhasil mengimplementasikan tampilan
               time = now,
               feelings = "senang sih, cuman tadi baju aku basah kena hujan :(",
               mood_intensity = 8,
-              sadness_level = 2
             )
             self.assertTrue(mood.is_mood_strong)
     ```
