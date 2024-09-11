@@ -492,7 +492,7 @@ Until now, no data has been added and displayed in the application. Now, we will
 ## Tutorial: Deploying to PWS Automatically With GitHub Actions
 
 :::warning
-As of right now, PWS cannot be used yet. You can still follow the instructions on this step, but please do note that **the deployment in PWS won't be successful.**
+As of right now, PWS is not yet stable. You can still follow the instructions on this step, but please do note that **the deployment in PWS can still fail.**
 :::
 
 On the previous tutorials, if you want to deploy to the PWS and push your changes to GitHub, you need to do two separate pushes, to GitHub (`git push origin main`) and to the PWS (`git push pws master`). On this tutorial, you will create a script that can help you deploy to the PWS and also push the changes to GitHub with only one push command. You only need to do the steps below carefully.

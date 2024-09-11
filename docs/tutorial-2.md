@@ -500,7 +500,7 @@ Sampai saat ini, belum ada data yang ditambahkan dan dimunculkan ke dalam aplika
 ## Tutorial: Melakukan Push Ke PWS Secara Otomatis Menggunakan GitHub Actions
 
 :::warning
-Saat ini, PWS belum bisa kembali digunakan. Kamu bisa tetap mengikuti langkah-langkah yang akan dijelaskan selanjutnya, tetapi harap perhatikan bahwa **deployment pada PWS tidak akan berhasil**.
+Saat ini, PWS masih cenderung belum stabil. Kamu bisa mengikuti langkah-langkah yang akan dijelaskan selanjutnya, tetapi harap perhatikan bahwa **deployment pada PWS belum tentu akan berhasil**.
 :::
 
 Pada tutorial-tutorial sebelumnya, apabila kamu ingin melakukan _deployment_ ke PWS dan _push_ ke GitHub, kamu perlu melakukan push sebanyak dua kali, yaitu ke GitHub (`git push origin main`) dan ke PWS (`git push pws master`). Pada langkah tutorial ini, kamu akan membuat sebuah _script_ yang dapat membantumu melakukan _deployment_ ke PWS sekaligus dengan melakukan _push_ ke GitHub hanya dalam satu kali _push_. Kamu hanya perlu mengikuti langkah-langkah berikut dengan cermat.
