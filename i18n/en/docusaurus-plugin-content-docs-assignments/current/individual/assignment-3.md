@@ -8,6 +8,8 @@ Path: assignment/individual/assignment-3
 
 Platform-Based Programming (CSGE602022) — Organized by the Faculty of Computer Science Universitas Indonesia, Odd Semester 2024/2025
 
+---
+
 ## Assignment Description
 
 In this assignment, you have to implement the data delivery concept and apply several concepts learned in the tutorial.

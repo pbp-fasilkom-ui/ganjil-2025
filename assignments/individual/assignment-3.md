@@ -1,7 +1,7 @@
 ---
 sidebar_label: Tugas 3
 sidebar_position: 3
-Path: docs/tugas-3
+Path: assignments/individual/assignment-3
 ---
 
 # Tugas 3: Implementasi Form dan Data Delivery pada Django

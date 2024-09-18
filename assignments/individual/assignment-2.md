@@ -1,7 +1,7 @@
 ---
 sidebar_label: Tugas 2
-sidebar_position: 1
-Path: docs/tugas-2
+sidebar_position: 2
+Path: assignments/individual/assignment-2
 ---
 
 # Tugas 2: Implementasi *Model-View-Template* (MVT) pada Django

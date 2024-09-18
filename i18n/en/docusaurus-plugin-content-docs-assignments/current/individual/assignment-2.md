@@ -1,7 +1,7 @@
 ---
 sidebar_label: Assignment 2
-sidebar_position: 1
-Path: docs/tugas-2
+sidebar_position: 2
+Path: assignments/individual/assignment-2
 ---
 
 # Assignment 2: Model-View-Template (MVT) Implementation on Django
