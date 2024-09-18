@@ -245,9 +245,7 @@ Kita sudah menambahkan formulir registrasi akun dan membuat mekanisme `register`
          if form.is_valid():
                user = form.get_user()
                login(request, user)
-               response = HttpResponseRedirect(reverse("main:show_main"))
-               response.set_cookie('last_login', str(datetime.datetime.now()))
-               return response
+               return redirect('main:show_main')
 
       else:
          form = AuthenticationForm(request)
@@ -405,6 +403,25 @@ Sekarang, kita akan melihat penggunaan _cookies_ dengan menambahkan data _last l
    from django.http import HttpResponseRedirect
    from django.urls import reverse
    ```
+
+3. Pada fungsi `login_user`, kita akan menambahkan fungsionalitas menambahkan _cookie_ yang bernama `last_login` untuk melihat kapan terakhir kali pengguna melakukan _login_. Caranya adalah dengan **mengganti kode** yang ada pada **blok** `if form.is_valid()` menjadi potongan kode berikut.
+
+   ```python
+   ...
+   if form.is_valid():
+       user = form.get_user()
+       login(request, user)
+       response = HttpResponseRedirect(reverse("main:show_main"))
+       response.set_cookie('last_login', str(datetime.datetime.now()))
+       return response
+   ...
+   ```
+
+   **Penjelasan Kode:**
+
+   - `login(request, user)` berfungsi untuk melakukan login terlebih dahulu
+   - `response = HttpResponseRedirect(reverse("main:show_main"))` untuk membuat response
+   - `response.set_cookie('last_login', str(datetime.datetime.now()))` berfungsi untuk membuat _cookie last_login_ dan menambahkannya ke dalam response
 
 :::note
 Perhatikan indentasi kode kamu, pastikan tidak terdapat _dead code_ pada fungsi tersebut.
