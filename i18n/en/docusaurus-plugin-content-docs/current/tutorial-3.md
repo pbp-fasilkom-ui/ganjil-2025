@@ -403,28 +403,6 @@ Now, we will look at how to use cookies by adding `last login` data and displayi
    from django.urls import reverse
    ```
 
-3. In the `login_user` function, we will add the functionality to set a cookie named `last_login` to track when the user last logged in. Do this by **replacing the code** in the `if user is not None` block with the following snippet.
-
-   ```python
-   ...
-   if user is not None:
-       login(request, user)
-       response = HttpResponseRedirect(reverse("main:show_main"))
-       response.set_cookie('last_login', str(datetime.datetime.now()))
-       return response
-   ...
-   ```
-
-   **Code Explanation:**
-
-   - `login(request, user)` handles logging the user in.
-   - `response = HttpResponseRedirect(reverse("main:show_main"))` creates the response.
-   - `response.set_cookie('last_login', str(datetime.datetime.now()))` creates a `last_login` cookie and adds it to the response.
-
-:::note
-Pay attention to your code's indentation to ensure no dead code appears in the function.
-:::
-
 4. In the `show_main` function, add the snippet `'last_login': request.COOKIES['last_login']` to the `context` variable. Here is an example of the updated code.
 
    ```python
