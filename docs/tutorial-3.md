@@ -255,7 +255,6 @@ Kita sudah menambahkan formulir registrasi akun dan membuat mekanisme `register`
 
    **Penjelasan Kode:**
 
-   - `authenticate(request, username=username, password=password)` digunakan untuk melakukan autentikasi pengguna berdasarkan username dan password yang diterima dari permintaan (_request_) yang dikirim oleh pengguna saat _login_. Jika kombinasi valid, maka objek `user` akan di-_return_. Jika tidak, maka akan mengembalikan `None`.
    - `login(request, user)` berfungsi untuk melakukan login terlebih dahulu. Jika pengguna valid, fungsi ini akan membuat _session_ untuk pengguna yang berhasil login.
 
 3. Buatlah berkas HTML baru dengan nama `login.html` pada direktori `main/templates`. Isi dari `login.html` dapat kamu isi dengan _template_ berikut.

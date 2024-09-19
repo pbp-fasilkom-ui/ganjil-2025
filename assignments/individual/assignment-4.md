@@ -21,11 +21,10 @@ Pada tugas ini, kamu akan mengimplementasikan konsep *authentication*, *session*
 - [ ] Menghubungkan model `Product` dengan `User`.
 - [ ] Menampilkan detail informasi pengguna yang sedang *logged in* seperti *username* dan menerapkan `cookies` seperti `last login` pada halaman utama aplikasi.
 - [ ] Menjawab beberapa pertanyaan berikut pada `README.md` pada *root folder* (silakan modifikasi `README.md` yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
-
-    - [ ] Apa itu Django `UserCreationForm`, dan jelaskan apa kelebihan dan kekurangannya?
-    - [ ] Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
-    - [ ] Apa itu *cookies* dalam konteks aplikasi web, dan bagaimana Django menggunakan *cookies* untuk mengelola data sesi pengguna?
-    - [ ] Apakah penggunaan *cookies* aman secara *default* dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+    - [ ] Apa perbedaan antara `HttpResponseRedirect()` dan `redirect()`
+    - [ ] Jelaskan cara kerja penghubungan model `MoodEntry` dengan `User`!
+    - [ ] Apa perbedaan antara *authentication* dan *authorization*, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
+    - [ ] Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari *cookies* dan apakah semua cookies aman digunakan?
     - [ ] Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
 - [ ] Melakukan `add`-`commit`-`push` ke GitHub.
 

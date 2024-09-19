@@ -252,7 +252,6 @@ Now that we’ve added the registration form and created the `register` mechanis
 
    **Code Explanation:**
 
-   - `authenticate(request, username=username, password=password)` is used to authenticate the user based on the username and password received from the user's request when logging in. If the combination is valid, it returns a `user` object. Otherwise, it returns `None`.
    - `login(request, user)` is used to log in the user. If the user is valid, this function creates a session for the logged-in user.
 
 3. Create a new HTML file named `login.html` in the `main/templates` directory. Fill it with the following template:

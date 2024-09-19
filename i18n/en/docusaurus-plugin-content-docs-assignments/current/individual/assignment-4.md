@@ -22,11 +22,12 @@ Checklists for this assignment are:
 - [ ] Display *logged in* user details such as *username* and apply `cookies` like `last login` to the application's main page.
 - [ ] Answer the following questions in `README.md` in the root folder. (Modify your `README.md` that you have already created; add a subtitle for each assignment).
 
-    - [ ] What is a `UserCreationForm`, explain its advantages and disadvantages?
-    - [ ] What is the difference between authentication and authorization in Django, why are both important?
-    - [ ] What are *cookies* in web development, and how do Django use *cookies* to manage user sessions?
-    - [ ] Are the use of *cookies* safe by *default* in web development, or are there risks that needs to be noted?
+    - [ ] What is the difference between `HttpResponseRedirect()` and `redirect()`?
+    - [ ] Explain how the `MoodEntry` model is linked with `User`!
+    - [ ] What is the difference between *authentication* and *authorization*, and what happens when a user logs in? Explain how Django implements these two concepts.
+    - [ ] How does Django remember logged-in users? Explain other uses of *cookies* and whether all cookies are safe to use.
     - [ ] Explain how did you implement the checklist *step-by-step* (apart from following the tutorial).
+
 - [ ] Perform `add`-`commit`-`push` to GitHub.
 
 ## Deadline
