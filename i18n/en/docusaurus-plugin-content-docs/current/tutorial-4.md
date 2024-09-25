@@ -492,13 +492,13 @@ Here are the things you need to do to add the feature to delete mood data:
     > Don't forget to try to understand the code 😅
 
     ```python
-		def delete_mood(request, id):
-		    # Get mood based on id
-		    mood = MoodEntry.objects.get(pk = id)
-		    # Delete mood
-		    mood.delete()
-		    # Return to home page
-		    return HttpResponseRedirect(reverse('main:show_main'))
+	def delete_mood(request, id):
+	    # Get mood based on id
+	    mood = MoodEntry.objects.get(pk = id)
+	    # Delete mood
+	    mood.delete()
+	    # Return to home page
+	    return HttpResponseRedirect(reverse('main:show_main'))
     ```
 
 2. Open `urls.py` in the `main` folder and import the function you just created.
@@ -962,7 +962,7 @@ Next, we need a display if the mood_entry is still empty. Choose a sad photo or 
     {% if not mood_entries %}
     <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
         <img src="{% static 'image/very-sad.png' %}" alt="Sad face" class="w-32 h-32 mb-4"/>
-        <p class="text-center text-gray-600 mt-4">Belum ada data mood pada mental health tracker.</p>
+        <p class="text-center text-gray-600 mt-4">There is no mood data in mental health tracker.</p>
     </div>
     {% else %}
     <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 w-full">
@@ -1125,7 +1125,7 @@ The display of [http://localhost:8000](http://localhost:8000) will change to loo
    └── requirements.txt
    ```
 
-## Kontributor
+## Contributor
 
 - Isa Citra Buana
 - Williams
