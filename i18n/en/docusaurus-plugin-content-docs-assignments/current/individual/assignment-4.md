@@ -1,7 +1,7 @@
 ---
 sidebar_label: Assignment 4
 sidebar_position: 4
-Path: assignments/individual/assignment-4
+Path: assignment/individual/assignment-4
 ---
 
 # Assignment 4: The Implementation of Authentication, Session, and Cookies in Django
