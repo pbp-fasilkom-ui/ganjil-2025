@@ -34,7 +34,7 @@ In the PBD course, we will only focus on the client-side JavaScript.
 
 Take a look at the diagram below to understand how JavaScript execution is done by the browser.
 
-![javascript-works](https://preview.ibb.co/e258TG/Screenshot_from_2017_10_31_14_29_13.png)
+![javascript-works](https://i.imgur.com/PvPYhB5.png)
 
 After the browser downloads the HTML web page, the browser will look for the `<script></script>` tag, and the browser will see the tag script if the tag contains embedded JavaScript or external JavaScript. If the script tag refers to an external JavaScript code, the browser will download that file first.
 
@@ -296,16 +296,16 @@ Here is an example of using Fetch API with the `async` and `await` functions to 
 
 ```javascript
 async function fetchData() {
-    const response = await fetch("https://jokes-bapack2-api.yuana.id/v1/text/random");
+    const response = await fetch("https://hp-api.onrender.com/api/characters");
     const data = await response.json();
     return data;
 }
 
-const joke = await fetchData();
-console.log(joke);
+const characters = await fetchData();
+console.log(characters);
 ```
 
-The code above will perform an AJAX request to request data from the API asynchronously. The AJAX request will store the result in the `joke` variable.
+The code above will perform an AJAX request to request data from the Harry Potter characters API asynchronously. The AJAX request will store the result in the `characters` variable.
 
 You can learn more about the Fetch API at [this link](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
@@ -607,9 +607,7 @@ In this section, you will create a function in the views to add a new mood to th
     </script>
     ```
     :::info
-    The form and JavaScript functions in the modal that we have created are adapted to the model in the `mental_health_tracker` application.
-
-    To create a modal without using JavaScript, we can use a built-in class in a Tailwind CSS JavaScript Library, one of which is [_Flowbite_](https://flowbite.com/). You can read more about the modal on the _Flowbite Tailwind CSS_ at [here](https://flowbite.com/docs/components/modal/).
+    The form and JavaScript functions in the modal that we have created are adapted to the model in the `mental_health_tracker` application. If you want to use other models with other fields, pay attention again to the values of the related HTML attributes.
     :::
 
 3. Change the Add New Mood Entry button that you have added in the tutorial above and add a new button to perform the addition of data with AJAX.
