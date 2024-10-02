@@ -655,15 +655,22 @@ Modal dengan form yang telah kamu buat sebelumnya belum bisa digunakan untuk men
     - `new FormData(document.querySelector('#moodEntryForm'))` digunakan untuk membuat sebuah `FormData` baru yang datanya diambil dari _form_ pada modal. Objek `FormData` dapat digunakan untuk mengirimkan data _form_ tersebut ke server.
     - `document.getElementById("moodEntryForm").reset()` digunakan untuk mengosongkan isi *field* form modal setelah di-*submit*.
 
-2. Tambahkan fungsi `onclick` pada *button* "Add Product" pada modal untuk menjalankan fungsi `addMoodEntry()` dengan menambahkan kode berikut.
+2. Tambahkan sebuah _event listener_ pada form yang ada di modal untuk menjalankan fungsi `addMoodEntry()` dengan menambahkan kode berikut.
     ```html title="main/templates/main.html"
     <script>
     ...
-    document.getElementById("submitMoodEntry").onclick = addMoodEntry
+    document.getElementById("moodEntryForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        addMoodEntry();
+      })
     </script>
     ```
     **Penjelasan Kode:**
-    - `document.getElementById("submitMoodEntry").onclick = addMoodEntry`: Apabila tombol _save_ pada modal (`<button type="submit" id="submitMoodEntry" form="moodEntryForm" class="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Save</button>`) di-_click_, maka aplikasi ada akan memanggil fungsi `addMoodEntry()`. 
+    - `document.getElementById("moodEntryForm")`: Mengambil sebuah element dengan id "moodEntryForm" dari DOM yang merupakan elemen form pada modal yang digunakan untuk menambahkan _mood entry_ menggunakan AJAX.
+    - `.addEventListener("submit", ...)`: Menambahkan _event listener_ pada form yang telah diambil/di-_select_ dari DOM pada bagian sebelumnya, lalu menambahkan sebuah fungsi _callback_ yang akan dipanggil ketika form di-_submit_ (yaitu ketika tombol elemen input yang memiliki `type="submit"` diklik).
+    - `(e) => {...`: Merupakan fungsi _callback_ yang diberikan ke _event listener_ fungsi tersebut, kemudian akan dijalankan ketika form di-_submit_ (fungsi ditulis menggunakan notasi _arrow function_ yang baru ditambahkan pada standar ES6 JavaScript. Kamu dapat mengeksplorasi konsep ini lebih lanjut pada [artikel ini](https://www.freecodecamp.org/news/javascript-arrow-functions-in-depth/)).
+    - `e.preventDefault()`: Secara _default_, ketika sebuah form mengalami _event submit_, form tersebut akan berusaha mengirimkan data ke URL yang dimasukkan pada atribut `action` pada tag `form`. Akan tetapi, karena kita menggunakan metode AJAX yang berbeda dengan yang biasa kita gunakan sebelumnya pada Django, kita perlu mematikan _default behavior_ ini menggunakan _method_ `preventdefault()`.
+    - `addMoodEntry()`: Memanggil fungsi untuk menambahkan _mood entry_.
 
 Selamat! Kamu telah berhasil membuat aplikasi yang dapat menambahkan data dengan menggunakan AJAX. Bukalah [http://localhost:8000/](http://localhost:8000/) dan cobalah untuk menambahkan data _mood entry_ baru pada aplikasi. Seharusnya, sekarang aplikasi tidak perlu melakukan *reload* setiap kali data _mood entry_ baru ditambahkan.
 

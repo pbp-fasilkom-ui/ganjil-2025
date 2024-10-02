@@ -649,16 +649,23 @@ The modal with the form that you have created previously cannot be used to add d
     - `new FormData(document.querySelector('#moodEntryForm'))` is used to create a new `FormData` object that contains the data from the form in the modal. The `FormData` object can be used to send the form data to the server.
     - `document.getElementById("moodEntryForm").reset()` is used to clear the contents of the field form modal after submitting.
 
-2. Add the `onclick` function to the "Add Product" button in the modal to run the `addMoodEntry()` function with the following code.
+2. Add an event listener to the form in the modal to run the `addMoodEntry()` function with the following code.
     ```html title="main/templates/main.html"
     <script>
     ...
-    document.getElementById("submitMoodEntry").onclick = addMoodEntry
+     document.getElementById("moodEntryForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        addMoodEntry();
+      })
     </script>
     ```
 
     **Code Explanation:**
-    - `document.getElementById("submitMoodEntry").onclick = addMoodEntry`: When the save button in the modal (`<button type="submit" id="submitMoodEntry" form="moodEntryForm" class="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Save</button>`) is clicked, then the application will call the `addMoodEntry()` function.
+    - `document.getElementById("moodEntryForm")`: Retrieves an element with the ID "moodEntryForm" from the DOM, which is the form element in the modal used for adding a mood entry using AJAX.
+    - `.addEventListener("submit", ...)`: Adds an event listener to the form that was selected from the DOM in the previous step, then attaches a callback function that will be invoked when the form is submitted (i.e., when the input element with `type="submit"` is clicked).
+    - `(e) => {...`: The callback function provided to the event listener, which will be executed when the form is submitted (the function is written using the arrow function notation introduced in the ES6 standard of JavaScript; you can explore this concept further at [about arrow functions](https://www.freecodecamp.org/news/javascript-arrow-functions-in-depth/)).
+    - `e.preventDefault()`: By default, a form that experiences a submit event will attempt to send data to the URL specified in the `action` attribute of the `form` tag. However, since we are using a different AJAX method than what is typically done in Django, we want to disable this default behavior using the `preventDefault()` method.
+    - `addMoodEntry()`: Calls the function to add a mood entry.
 
 Congratulations! You have successfully created an application that can add data using AJAX. Go to [http://localhost:8000/](http://localhost:8000/) and try to add a new mood entry to the application. Now, the application should not need a reload every time a new mood entry has been added.
 
