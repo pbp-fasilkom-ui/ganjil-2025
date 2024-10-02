@@ -753,7 +753,7 @@ Fungsi `strip_tags` yang kamu tambahkan akan "membersihkan" semua data **baru**,
         ...
         async function refreshMoodEntries() {
             ...
-            moods.forEach((item) => {
+            moodEntries.forEach((item) => {
                 // highlight-start
                 const mood = DOMPurify.sanitize(item.fields.mood);
                 const feelings = DOMPurify.sanitize(item.fields.feelings);
