@@ -522,7 +522,7 @@ Ensure that you follow the tutorial carefully. Pay attention to any `TODO` comme
 
       // Navigate to the appropriate route (depending on the button type)
       if (item.name == "Add Mood") {
-        // TODO: Use Navigator.push to navigate to a MaterialPageRoute that includes TrackerFormPage.
+        // TODO: Use Navigator.push to navigate to a MaterialPageRoute that includes MoodEntryFormPage.
       }
     },
 	...
