@@ -356,7 +356,7 @@ Follow the steps below to integrate the authentication system into **Flutter**.
     This will create a new `Provider` object that will share an instance of `CookieRequest` with all components in the application.
 
     :::note  
-    Don't forget to add `import 'package:pbp_django_auth/pbp_django_auth.dart';` to the top of the file.
+    Don't forget to add `import 'package:pbp_django_auth/pbp_django_auth.dart';` and `import 'package:provider/provider.dart';` to the top of the file.
     :::  
 
 3. Create a new file in the `screens` folder named `login.dart`.

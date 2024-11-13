@@ -359,7 +359,7 @@ Ikuti langkah-langkah berikut untuk melakukan integrasi sistem autentikasi pada 
     Hal ini akan membuat objek `Provider` baru yang akan membagikan _instance_ `CookieRequest` dengan semua komponen yang ada di aplikasi.
     
     :::note  
-    Jangan lupa untuk menambahkan `import 'package:pbp_django_auth/pbp_django_auth.dart';` pada bagian atas berkas  
+    Jangan lupa untuk menambahkan `import 'package:pbp_django_auth/pbp_django_auth.dart';` dan `import 'package:provider/provider.dart';` pada bagian atas berkas  
     :::  
 
 3. Buatlah berkas baru pada folder `screens` dengan nama `login.dart`.
