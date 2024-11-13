@@ -358,7 +358,7 @@ Follow the steps below to integrate the authentication system into **Flutter**.
     :::note  
     Don't forget to add `import 'package:pbp_django_auth/pbp_django_auth.dart';` to the top of the file.
     :::  
-    `
+
 3. Create a new file in the `screens` folder named `login.dart`.
 
 4. Fill the `login.dart` file with the following code.
