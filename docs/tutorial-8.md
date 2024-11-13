@@ -239,7 +239,13 @@ Ikuti langkah-langkah berikut untuk melakukan integrasi sistem autentikasi pada 
     ...
     ```
 
-7. Buatlah sebuah metode _view_ untuk login pada `authentication/views.py`.
+7. Untuk keperluan integrasi ke Django dari _emulator_ Android, tambahkan `10.0.2.2` pada `ALLOWED_HOSTS` di berkas `settings.py`.
+
+    ```python
+    ALLOWED_HOSTS = [..., ..., "10.0.2.2"]
+    ```
+
+8. Buatlah sebuah metode _view_ untuk login pada `authentication/views.py`.
 
     ```python
     from django.contrib.auth import authenticate, login as auth_login
@@ -274,7 +280,7 @@ Ikuti langkah-langkah berikut untuk melakukan integrasi sistem autentikasi pada 
             }, status=401)
    	```
 
-8. Buat _file_ `urls.py` pada folder `authentication` dan tambahkan URL _routing_ terhadap fungsi yang sudah dibuat dengan _endpoint_ `login/`.
+9. Buat _file_ `urls.py` pada folder `authentication` dan tambahkan URL _routing_ terhadap fungsi yang sudah dibuat dengan _endpoint_ `login/`.
 
     ```python
     from django.urls import path
@@ -287,7 +293,7 @@ Ikuti langkah-langkah berikut untuk melakukan integrasi sistem autentikasi pada 
     ]
     ```
 
-9. Terakhir, tambahkan `path('auth/', include('authentication.urls')),` pada file `mental_health_tracker/urls.py`.
+10. Terakhir, tambahkan `path('auth/', include('authentication.urls')),` pada file `mental_health_tracker/urls.py`.
 
 ### Integrasi Sistem Autentikasi pada Flutter
 

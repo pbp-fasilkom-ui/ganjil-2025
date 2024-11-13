@@ -235,8 +235,13 @@ Follow the steps below to integrate the authentication system in **Django**.
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
     ```
+7. For the purpose of integrating with Django from the Android emulator, add `10.0.2.2` to `ALLOWED_HOSTS` in the `settings.py` file.   
     
-7. Create a view method for login in `authentication/views.py`.
+    ```python
+    ALLOWED_HOSTS = [..., ..., "10.0.2.2"]
+    ```
+
+8. Create a view method for login in `authentication/views.py`.
 
     ```python
 	from django.contrib.auth import authenticate, login as auth_login
@@ -271,7 +276,7 @@ Follow the steps below to integrate the authentication system in **Django**.
             }, status=401)
 	```
 
-8. Create a `urls.py` file in the `authentication` folder and add URL routing to the function created with the `login/` endpoint.
+9. Create a `urls.py` file in the `authentication` folder and add URL routing to the function created with the `login/` endpoint.
 
     ```python
 	from django.urls import path
@@ -284,7 +289,7 @@ Follow the steps below to integrate the authentication system in **Django**.
 	]
     ```
     
-9. Finally, add `path('auth/', include('authentication.urls'))`, to the `shopping_list/urls.py` file.
+10. Finally, add `path('auth/', include('authentication.urls'))`, to the `shopping_list/urls.py` file.
 
 ### Integrate Authentication System in Flutter
 
