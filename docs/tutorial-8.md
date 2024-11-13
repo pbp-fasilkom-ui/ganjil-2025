@@ -851,11 +851,11 @@ Untuk melakukan perintah _HTTP request_, kita membutuhkan _package_ tambahan yak
     class _MoodEntryPageState extends State<MoodEntryPage> {
       Future<List<MoodEntry>> fetchMood(CookieRequest request) async {
         // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-        final response = await request.get('http://[URL_APP_KAMU]/json/');
-
+        final response = await request.get('http://[APP_URL_KAMU]/json/');
+        
         // Melakukan decode response menjadi bentuk json
         var data = response;
-
+        
         // Melakukan konversi data json menjadi object MoodEntry
         List<MoodEntry> listMood = [];
         for (var d in data) {
@@ -864,7 +864,6 @@ Untuk melakukan perintah _HTTP request_, kita membutuhkan _package_ tambahan yak
           }
         }
         return listMood;
-        }
       }
 
       @override

@@ -849,10 +849,10 @@ To create HTTP requests, we need the [http](http://pub.dev/packages/http) packag
       Future<List<MoodEntry>> fetchMood(CookieRequest request) async {
         // TODO: Don't forget to add the trailing slash (/) at the end of the URL!
         final response = await request.get('http://[YOUR_APP_URL]/json/');
-
+        
         // Decoding the response into JSON
         var data = response;
-
+        
         // Convert json data to a MoodEntry object
         List<MoodEntry> listMood = [];
         for (var d in data) {
@@ -861,9 +861,8 @@ To create HTTP requests, we need the [http](http://pub.dev/packages/http) packag
           }
         }
         return listMood;
-        }
       }
-
+      
       @override
       Widget build(BuildContext context) {
         final request = context.watch<CookieRequest>();
