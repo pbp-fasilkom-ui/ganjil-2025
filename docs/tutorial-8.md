@@ -831,7 +831,7 @@ Untuk melakukan perintah _HTTP request_, kita membutuhkan _package_ tambahan yak
 
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:[APP_NAME]/models/moodentry.dart';
+    import 'package:[APP_NAME]/models/mood_entry.dart';
     ...
     ```
 

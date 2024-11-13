@@ -828,7 +828,7 @@ To create HTTP requests, we need the [http](http://pub.dev/packages/http) packag
 
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:[APP_NAME]/models/moodentry.dart';
+    import 'package:[APP_NAME]/models/mood_entry.dart';
     ...
     ```
 
