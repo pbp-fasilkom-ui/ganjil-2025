@@ -79,7 +79,7 @@ Path: assignments/group/final
         </td>
         <td>
             <p><b>Deadline: Sunday, December 22, 2024, at 23:59 WIB</b></p>
-            <p><b>CATASTROPHE:</b> There is a tolerance time of 30 minutes. The APK to be assessed is the latest version released no later than 30 minutes after the deadline. APKs released after Monday, December 23, 2024, at 12:30 AM WIB will not be evaluated.</p>
+            <p><b>NOTES:</b> There is a tolerance time of 30 minutes. The APK to be assessed is the latest version released no later than 30 minutes after the deadline. APKs released after Monday, December 23, 2024, at 12:30 AM WIB will not be evaluated.</p>
             <p><b>Presentation and Demo Due</b></p>
             <b>Submission:</b>
             <ul>
