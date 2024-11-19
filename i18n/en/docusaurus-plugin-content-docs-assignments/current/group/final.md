@@ -38,7 +38,7 @@ In this final project, you will work in groups to develop a mobile application u
 
 1. Apply widgets for layout and input (Material/Cupertino, according to the integration of the group members)
 2. Apply event handling
-3. Apply asynchronous communication with Django web service (i.e., the web application created in the first semester project)
+3. Apply asynchronous communication with Django web service (i.e., the web application built as part of the midterm group project)
 4. Handle the JSON response from the Django web service and display the results on the mobile application
 
 ## Group Assignment Stages
