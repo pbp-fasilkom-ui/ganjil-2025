@@ -136,7 +136,7 @@ Untuk publikasi aplikasi pada App Center, aplikasi Flutter harus ditandatangani 
     Untuk pengguna Windows, jalankan perintah berikut pada Command Prompt.
 
     ```bash
-    keytool -genkey -v -keystore %userprofile%\release-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias release
+    keytool -genkey -v -keystore "%userprofile%\release-keystore.jks" -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias release
     ```
 
     Berikan _keystore_ tersebut _password_ yang aman dan simpan atau ingat-ingat _password_ tersebut, jangan sampai lupa. Isilah informasi yang dibutuhkan hingga proses selesai. Kemudian, **pindahkan berkas tersebut ke dalam _root folder_ proyek aplikasi**.
