@@ -8,8 +8,6 @@ title: Penghargaan Aplikasi Tugas Kelompok Terbaik
 
 ## Aplikasi Web Terbaik
 
-Tes
-
 1. **BaLink**
     - Tim Pengembang: Kelompok B09
     
