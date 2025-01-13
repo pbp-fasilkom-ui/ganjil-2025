@@ -50,6 +50,11 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        pages: {
+              path: 'src/pages',
+              routeBasePath: '/',
+              include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -76,7 +81,12 @@ const config: Config = {
           position: 'left'
         },
         {
-          to: 'playground',
+          to: '/awards/',
+          label: 'Penghargaan',
+          position: 'right',
+        },
+        {
+          to: '/playground/',
           label: 'Playground',
           position: 'right',
         },
@@ -120,7 +130,7 @@ const config: Config = {
           routeBasePath: 'assignments',
           sidebarPath: require.resolve('./sidebars.js')
         },
-      ],
+    ],
   ],
 };
 

@@ -18,5 +18,9 @@
   "item.label.Playground": {
     "message": "Playground",
     "description": "Navbar item with label Playground"
+  },
+  "item.label.Penghargaan": {
+    "message": "Awards",
+    "description": "Navbar item with label Penghargaan"
   }
 }
